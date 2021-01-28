@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title ¡La web que queremos!
+        link(rel="stylesheet" href="app/app.css")
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Offside&family=Work+Sans:wght@300;700&display=swap")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css")
+
+    body
+        #app
+            .bg: lottie-player(src="app/i/background.json" background="transparent" loop autoplay preserveAspectRatio="xMinYMax slice")
+
+            .start(v-if="screen==1")
+                .modal.is-active.has-text-centered
+                    .modal-background
+                    .modal-content
+                        h1.is-size-1.has-text-weight-bold ¡La web que queremos!
+                        .button(@click="screenup")
+                            .button-content Iniciar
+                            lottie-player(src="app/i/button.json" background="transparent" loop autoplay)
+            
+            .section(v-if="screen==2"): .container: .columns.is-vcentered
+                .column: Sprites(:s="['tablet1', 'tablet2']" :speed="2000" anim="animate__animated animate__bounceIn" exitanim="animate__animated animate__bounceOut" path="app/i/c5/cudi5-" ext=".svg" autoplay)
+                .column
+                    .textzone.animate__animated.animate__bounceInRight
+                        p ¿Sabes? Los derechos protegen a las personas de las injusticias y les permiten desarrollar todo su potencial como miembros útiles y activos de la sociedad.
+                        .columns.is-vcentered.is-mobile
+                            .column: Sounds(file="app/s/a1.mp3" autoplay @completed="au1 = true")
+                            .column.has-text-right
+                                .button(@click="screenup" v-if="au1").animate__animated.animate__heartBeat
+                                    .button-content Siguiente
+                                    lottie-player(src="app/i/button.json" background="transparent" loop autoplay)
+            
+            .section(v-if="screen==3"): .container: .columns.is-vcentered
+                .column
+                    .textzone.animate__animated.animate__bounceInLeft
+                        p Asimismo, implican una serie de deberes para con los demás, además de suponer respeto hacia uno mismo y al prójimo.
+                        .columns.is-vcentered.is-mobile
+                            .column: Sounds(file="app/s/a2.mp3" autoplay @completed="au2 = true")
+                            .column.has-text-right
+                                .button(@click="screenup" v-if="au2").animate__animated.animate__heartBeat
+                                    .button-content Siguiente
+                                    lottie-player(src="app/i/button.json" background="transparent" loop autoplay)
+                .column: Sprites(:s="['explica', 'manoIzquierda2']" :speed="2000" anim="animate__animated animate__bounceIn" exitanim="animate__animated animate__bounceOut" path="app/i/c5/cudi5-" ext=".svg" autoplay)
+            
+            
+            .section(v-if="screen==4")
+                .container: .columns
+                    .column
+                        .textzone.animate__animated.animate__bounceInLeft.inst
+                            p Ahora, coloca los siguientes conceptos en la pantalla correspondiente.
+                            Sounds(file="app/s/a3.mp3" autoplay @completed="au3 = true")
+                .container.dzones: .conceptos.dropzone
+                    .concepto(data="d") Educación
+                    .concepto(data="dc") Seguridad personal
+                    .concepto(data="d") Libertad de expresión
+                    .concepto(data="dc") Privacidad
+                    .concepto(data="dc") Respeto
+                    .concepto(data="c") Crear información precisa
+                    .concepto(data="c") Respetar propiedad intelectual
+                    .concepto(data="dc") Entorno seguro
+                    .concepto(data="d") Acceso a información
+                    .concepto(data="d") Participación
+                               
+                .container: .columns.is-centered.has-text-centered.is-mobile.dzones.is-vcentered
+                    .column.is-4.is-5-mobile
+                        .textzone.animate__animated.animate__bounceIn.alt.alt1
+                            p Derechos
+                        .dropzone.dz(data="d")
+                        .dropzone.dz(data="d")
+                        .dropzone.dz(data="d")
+                        .dropzone.dz(data="d")
+                        .dropzone.dz(data="d")
+                    .column.is-2-mobile.centralsprite
+
+                            Sprites(v-show="cudistatus == 'idle'" :s="['arriba']" :speed="2000" anim="animate__animated animate__pulse" exitanim="animate__animated animate__bounceOut" path="app/i/c5/cudi5-" ext=".svg")
+
+                            Sprites(v-show="cudistatus == 'error'" :s="['error']" :speed="2000" anim="animate__animated animate__heartBeat" exitanim="animate__animated animate__bounceOut" path="app/i/c5/cudi5-" ext=".svg")
+
+                            Sprites(v-show="cudistatus == 'ok'" :s="['arribaManos']" :speed="2000" anim="animate__animated animate__wobble" exitanim="animate__animated animate__bounceOut" path="app/i/c5/cudi5-" ext=".svg")
+                    .column.is-4.is-5-mobile
+                        .textzone.animate__animated.animate__bounceIn.alt.alt2
+                            p Compromisos
+                        .dropzone.dz(data="c")
+                        .dropzone.dz(data="c")
+                        .dropzone.dz(data="c")
+                        .dropzone.dz(data="c")
+                        .dropzone.dz(data="c")
+
+            
+            .section(v-if="screen==5"): .container: .columns.is-vcentered
+                .column
+                    .textzone.animate__animated.animate__bounceInLeft
+                        p ¡Genial! Ya conoces algunos derechos y compromisos. En algunos casos, los conceptos son derechos y compromisos al mismo tiempo, ¿pudiste identificarlos?
+                        .columns.is-vcentered.is-mobile
+                            .column: Sounds(file="app/s/a4.mp3" autoplay @completed="au4 = true")
+                            .column.has-text-right
+                                a.button(target="_blank" href="http://www.webwewant.eu/documents/10180/18685/Handbook_ES.pdf/d73292c3-9287-4873-9006-1fba452cabda" v-if="au4").animate__animated.animate__heartBeat
+                                    .button-content Referencia
+                                    lottie-player(src="app/i/button.json" background="transparent" loop autoplay)
+                .column: Sprites(:s="['manoIzquierda', 'manoIzquierda2']" :speed="4000" anim="animate__animated animate__bounceIn" exitanim="animate__animated animate__bounceOut" path="app/i/c5/cudi5-" ext=".svg" autoplay)
+
+
+        script(src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js")
+        script(src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.12/lib/draggable.bundle.js")
+        script(src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js")
+        //script(src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js")
+        script(src="app/Sprites.js")
+        script(src="app/Sound.js")
+        script(src="app/app.js")

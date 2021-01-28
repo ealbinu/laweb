@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>¡La web que queremos!</title>
+    <link rel="stylesheet" href="app/app.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Offside&amp;family=Work+Sans:wght@300;700&amp;display=swap"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  </head>
+  <body>
+    <div id="app">
+      <div class="bg">
+        <lottie-player src="app/i/background.json" background="transparent" loop="loop" autoplay="autoplay" preserveAspectRatio="xMinYMax slice"></lottie-player>
+      </div>
+      <div class="start" v-if="screen==1">
+        <div class="modal is-active has-text-centered">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <h1 class="is-size-1 has-text-weight-bold">¡La web que queremos!</h1>
+            <div class="button" @click="screenup">
+              <div class="button-content">Iniciar</div>
+              <lottie-player src="app/i/button.json" background="transparent" loop="loop" autoplay="autoplay"></lottie-player>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section" v-if="screen==2">
+        <div class="container">
+          <div class="columns is-vcentered">
+            <div class="column">
+              <Sprites :s="['tablet1', 'tablet2']" :speed="2000" anim="animate__animated animate__bounceIn" exitanim="animate__animated animate__bounceOut" path="app/i/c5/cudi5-" ext=".svg" autoplay="autoplay"></Sprites>
+            </div>
+            <div class="column">
+              <div class="textzone animate__animated animate__bounceInRight">
+                <p>¿Sabes? Los derechos protegen a las personas de las injusticias y les permiten desarrollar todo su potencial como miembros útiles y activos de la sociedad.</p>
+                <div class="columns is-vcentered is-mobile">
+                  <div class="column">
+                    <Sounds file="app/s/a1.mp3" autoplay="autoplay" @completed="au1 = true"></Sounds>
+                  </div>
+                  <div class="column has-text-right">
+                    <div class="button animate__animated animate__heartBeat" @click="screenup" v-if="au1">
+                      <div class="button-content">Siguiente</div>
+                      <lottie-player src="app/i/button.json" background="transparent" loop="loop" autoplay="autoplay"></lottie-player>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section" v-if="screen==3">
+        <div class="container">
+          <div class="columns is-vcentered">
+            <div class="column">
+              <div class="textzone animate__animated animate__bounceInLeft">
+                <p>Asimismo, implican una serie de deberes para con los demás, además de suponer respeto hacia uno mismo y al prójimo.</p>
+                <div class="columns is-vcentered is-mobile">
+                  <div class="column">
+                    <Sounds file="app/s/a2.mp3" autoplay="autoplay" @completed="au2 = true"></Sounds>
+                  </div>
+                  <div class="column has-text-right">
+                    <div class="button animate__animated animate__heartBeat" @click="screenup" v-if="au2">
+                      <div class="button-content">Siguiente</div>
+                      <lottie-player src="app/i/button.json" background="transparent" loop="loop" autoplay="autoplay"></lottie-player>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <Sprites :s="['explica', 'manoIzquierda2']" :speed="2000" anim="animate__animated animate__bounceIn" exitanim="animate__animated animate__bounceOut" path="app/i/c5/cudi5-" ext=".svg" autoplay="autoplay"></Sprites>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section" v-if="screen==4">
+        <div class="container">
+          <div class="columns">
+            <div class="column">
+              <div class="textzone animate__animated animate__bounceInLeft inst">
+                <p>Ahora, coloca los siguientes conceptos en la pantalla correspondiente.</p>
+                <Sounds file="app/s/a3.mp3" autoplay="autoplay" @completed="au3 = true"></Sounds>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container dzones">
+          <div class="conceptos dropzone">
+            <div class="concepto" data="d">Educación</div>
+            <div class="concepto" data="dc">Seguridad personal</div>
+            <div class="concepto" data="d">Libertad de expresión</div>
+            <div class="concepto" data="dc">Privacidad</div>
+            <div class="concepto" data="dc">Respeto</div>
+            <div class="concepto" data="c">Crear información precisa</div>
+            <div class="concepto" data="c">Respetar propiedad intelectual</div>
+            <div class="concepto" data="dc">Entorno seguro</div>
+            <div class="concepto" data="d">Acceso a información</div>
+            <div class="concepto" data="d">Participación</div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="columns is-centered has-text-centered is-mobile dzones is-vcentered">
+            <div class="column is-4 is-5-mobile">
+              <div class="textzone animate__animated animate__bounceIn alt alt1">
+                <p>Derechos</p>
+              </div>
+              <div class="dropzone dz" data="d"></div>
+              <div class="dropzone dz" data="d"></div>
+              <div class="dropzone dz" data="d"></div>
+              <div class="dropzone dz" data="d"></div>
+              <div class="dropzone dz" data="d"></div>
+            </div>
+            <div class="column is-2-mobile centralsprite">
+              <Sprites v-show="cudistatus == 'idle'" :s="['arriba']" :speed="2000" anim="animate__animated animate__pulse" exitanim="animate__animated animate__bounceOut" path="app/i/c5/cudi5-" ext=".svg"></Sprites>
+              <Sprites v-show="cudistatus == 'error'" :s="['error']" :speed="2000" anim="animate__animated animate__heartBeat" exitanim="animate__animated animate__bounceOut" path="app/i/c5/cudi5-" ext=".svg"></Sprites>
+              <Sprites v-show="cudistatus == 'ok'" :s="['arribaManos']" :speed="2000" anim="animate__animated animate__wobble" exitanim="animate__animated animate__bounceOut" path="app/i/c5/cudi5-" ext=".svg"></Sprites>
+            </div>
+            <div class="column is-4 is-5-mobile">
+              <div class="textzone animate__animated animate__bounceIn alt alt2">
+                <p>Compromisos</p>
+              </div>
+              <div class="dropzone dz" data="c"></div>
+              <div class="dropzone dz" data="c"></div>
+              <div class="dropzone dz" data="c"></div>
+              <div class="dropzone dz" data="c"></div>
+              <div class="dropzone dz" data="c"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section" v-if="screen==5">
+        <div class="container">
+          <div class="columns is-vcentered">
+            <div class="column">
+              <div class="textzone animate__animated animate__bounceInLeft">
+                <p>¡Genial! Ya conoces algunos derechos y compromisos. En algunos casos, los conceptos son derechos y compromisos al mismo tiempo, ¿pudiste identificarlos?</p>
+                <div class="columns is-vcentered is-mobile">
+                  <div class="column">
+                    <Sounds file="app/s/a4.mp3" autoplay="autoplay" @completed="au4 = true"></Sounds>
+                  </div>
+                  <div class="column has-text-right"><a class="button animate__animated animate__heartBeat" target="_blank" href="http://www.webwewant.eu/documents/10180/18685/Handbook_ES.pdf/d73292c3-9287-4873-9006-1fba452cabda" v-if="au4">
+                      <div class="button-content">Referencia</div>
+                      <lottie-player src="app/i/button.json" background="transparent" loop="loop" autoplay="autoplay"></lottie-player></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <Sprites :s="['manoIzquierda', 'manoIzquierda2']" :speed="4000" anim="animate__animated animate__bounceIn" exitanim="animate__animated animate__bounceOut" path="app/i/c5/cudi5-" ext=".svg" autoplay="autoplay"></Sprites>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.12/lib/draggable.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+    <!--script(src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js")-->
+    <script src="app/Sprites.js"></script>
+    <script src="app/Sound.js"></script>
+    <script src="app/app.js"></script>
+  </body>
+</html>

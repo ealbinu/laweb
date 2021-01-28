@@ -1,0 +1,227 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.font {
+  font-family: 'Offside', cursive;
+}
+html,
+body,
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: 'Offside', cursive;
+}
+.bg {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+.bg lottie-player {
+  width: 100vw;
+  height: 100vh;
+}
+.start {
+  color: #fff;
+  font-family: 'Offside', cursive;
+}
+.modal-background {
+  background-image: linear-gradient(#5B4084, #56549D);
+  opacity: 0.9;
+}
+.button {
+  background-color: transparent !important;
+  border: none !important;
+  min-height: 120px;
+  position: relative;
+  font-family: 'Offside', cursive;
+}
+.button lottie-player {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.button .button-content {
+  position: relative;
+  z-index: 1;
+  font-size: 2rem;
+  padding: 2px 20px;
+  color: #57478D;
+}
+.button:hover {
+  text-shadow: 0 2px 0 #C3A5DE;
+}
+@media (max-width: 768px) {
+  .button {
+    min-height: 80px;
+  }
+  .button .button-content {
+    font-size: 1.2rem;
+    padding: 2px 10px;
+  }
+}
+.bg lottie-player {
+  background-image: url(i/bg.svg);
+  background-size: cover;
+  background-position: left;
+}
+h1 {
+  background: linear-gradient(#6E4890, #C3A5DE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px -3px 0px #fff;
+}
+body,
+html,
+#app {
+  height: 100%;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.textzone {
+  background: linear-gradient(#595F92, #492864);
+  padding: 40px;
+  border-radius: 40px;
+  box-shadow: -6px 6px 0 #482461 inset, 2px -2px 10px #482461 inset, -4px 4px 0 #AFABCE, 4px 12px 0 #6966A0;
+  border: 8px solid #E7DAD4;
+  color: #B6E4F1;
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-shadow: 0 2px 0 #482461;
+  font-family: 'Offside', cursive;
+  position: relative;
+}
+.textzone.inst {
+  padding: 20px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .textzone {
+    padding: 10px;
+    font-size: 0.9rem;
+    border: 4px solid #E7DAD4;
+    border-radius: 20px;
+  }
+  .textzone .int {
+    padding: 10px;
+  }
+}
+.sprites {
+  margin: 0 auto;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .sprites {
+    max-width: 300px;
+  }
+  .centralsprite {
+    position: absolute;
+    right: 0;
+    min-width: 100%;
+    z-index: -1;
+  }
+}
+.sounds {
+  max-width: 60px;
+  margin: 0 auto;
+  min-width: 40px;
+}
+.sounds .sounds-playing {
+  max-width: 60px;
+  cursor: pointer;
+  margin: 0px 0 -30px 0;
+}
+.alt {
+  padding: 10px;
+  margin: 4px 0 20px 0;
+  font-size: 1.2rem;
+  border-width: 3px;
+  box-shadow: -2px 2px 0 #482461 inset, 2px -2px 10px #482461 inset, -2px 2px 0 #AFABCE, 2px 6px 0 #6966A0;
+}
+.alt.alt1 {
+  background: linear-gradient(#714772, #923E3B);
+  color: #fff;
+}
+.alt.alt2 {
+  background: linear-gradient(#2A6285, #338BC5);
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .alt {
+    font-size: 0.7rem;
+  }
+}
+.conceptos,
+.dz {
+  font-size: 1rem;
+  text-shadow: none;
+  color: #492964;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .conceptos,
+  .dz {
+    font-size: 0.8rem;
+  }
+}
+.conceptos .concepto,
+.dz .concepto {
+  background: #fff;
+  box-shadow: 4px 3px 0 #6966A0;
+  border-radius: 20px;
+  padding: 2px 6px;
+  cursor: move;
+  margin: 2px 6px;
+  font-family: 'Offside', cursive;
+  display: inline-block;
+  z-index: 9;
+}
+@media (max-width: 768px) {
+  .conceptos .concepto,
+  .dz .concepto {
+    padding: 2px;
+  }
+}
+.dzones .dropzone.dz {
+  position: relative;
+  border: 2px dashed #FCEC6D;
+  box-shadow: 4px 4px 0 #4E3770;
+  background: rgba(255, 255, 255, 0.1);
+  min-height: 40px;
+  margin: 2px 0;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dzones .dropzone.dz.draggable-dropzone--occupied {
+  border: 2px solid #4E3770;
+}
+.dzones .dropzone.dz.draggable-dropzone--active {
+  border-color: #F5A355;
+}
+.conceptos {
+  padding: 20px 0;
+  margin: 20px 0;
+  background: linear-gradient(#595F92, #492864);
+  box-shadow: -2px 2px 0 #482461 inset, 2px -2px 10px #482461 inset, -2px 2px 0 #AFABCE, 2px 6px 0 #6966A0;
+  border-radius: 30px;
+}
+:focus {
+  outline: none !important;
+}
+/*# sourceMappingURL=app.css.map */
