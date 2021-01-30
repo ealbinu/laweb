@@ -143,9 +143,12 @@
                   <div class="column">
                     <Sounds file="app/s/a4.mp3" autoplay="autoplay" @completed="au4 = true"></Sounds>
                   </div>
-                  <div class="column has-text-right"><a class="button animate__animated animate__heartBeat" target="_blank" href="http://www.webwewant.eu/documents/10180/18685/Handbook_ES.pdf/d73292c3-9287-4873-9006-1fba452cabda" v-if="au4">
-                      <div class="button-content">Referencia</div>
+                  <div class="column has-text-right"><a class="button endbutton animate__animated animate__heartBeat" target="_blank" href="http://www.webwewant.eu/documents/10180/18685/Handbook_ES.pdf/d73292c3-9287-4873-9006-1fba452cabda" v-if="au4">
+                      <div class="button-content">La web que queremos</div>
                       <lottie-player src="app/i/button.json" background="transparent" loop="loop" autoplay="autoplay"></lottie-player></a></div>
+                </div>
+                <div class="columns has-text-centered endtext" v-if="au4">
+                  <p>Recurso inspirado en "La web que queremos" creado por <a href="http://www.eun.org/" target="_blank">European Schoolnet</a>, en colaboración con la red Insafe, con el respaldo de Liberty Global y Google bajo licencia CC BY-NC-ND 3.0</p>
                 </div>
               </div>
             </div>

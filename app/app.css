@@ -224,4 +224,25 @@ html,
 :focus {
   outline: none !important;
 }
+.endtext a {
+  margin: 0;
+  padding: 0 2px;
+  color: #FFEB7B;
+}
+.endtext a:hover {
+  color: #6EC2C4;
+}
+.endtext {
+  font-size: 0.9rem;
+}
+@media (max-width: 768px) {
+  .endtext p {
+    font-size: 0.6rem !important;
+    margin: 10px;
+  }
+}
+.button.endbutton .button-content {
+  font-size: 1rem;
+  text-shadow: none;
+}
 /*# sourceMappingURL=app.css.map */

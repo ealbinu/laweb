@@ -100,9 +100,11 @@ html(lang="es")
                         .columns.is-vcentered.is-mobile
                             .column: Sounds(file="app/s/a4.mp3" autoplay @completed="au4 = true")
                             .column.has-text-right
-                                a.button(target="_blank" href="http://www.webwewant.eu/documents/10180/18685/Handbook_ES.pdf/d73292c3-9287-4873-9006-1fba452cabda" v-if="au4").animate__animated.animate__heartBeat
-                                    .button-content Referencia
+                                a.button.endbutton(target="_blank" href="http://www.webwewant.eu/documents/10180/18685/Handbook_ES.pdf/d73292c3-9287-4873-9006-1fba452cabda" v-if="au4").animate__animated.animate__heartBeat
+                                    .button-content La web que queremos
                                     lottie-player(src="app/i/button.json" background="transparent" loop autoplay)
+                        .columns.has-text-centered.endtext(v-if="au4")
+                            p Recurso inspirado en "La web que queremos" creado por #[a(href="http://www.eun.org/" target="_blank") European Schoolnet], en colaboración con la red Insafe, con el respaldo de Liberty Global y Google bajo licencia CC BY-NC-ND 3.0
                 .column: Sprites(:s="['manoIzquierda', 'manoIzquierda2']" :speed="4000" anim="animate__animated animate__bounceIn" exitanim="animate__animated animate__bounceOut" path="app/i/c5/cudi5-" ext=".svg" autoplay)
 
 

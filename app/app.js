@@ -2,7 +2,7 @@ var vm = new Vue ({
     el: '#app',
     data () {
         return {
-            screen: 1,
+            screen: 5,
             au1: false,
             au2: false,
             au3: false,
