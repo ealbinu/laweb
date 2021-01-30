@@ -60,6 +60,17 @@
 		"sM": 0,
 		"sU": 0
 		},
+	"\/app\/digitalfamily.png": {
+		"ft": 32768,
+		"iS": 44379,
+		"oA": 0,
+		"oAP": "\/app\/digitalfamily.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/app\/i\/audioline.json": {
 		"ft": 524288,
 		"oA": 1,

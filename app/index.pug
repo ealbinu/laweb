@@ -23,6 +23,7 @@ html(lang="es")
                         .button(@click="screenup")
                             .button-content Iniciar
                             lottie-player(src="app/i/button.json" background="transparent" loop autoplay)
+                        a(href="https://digitalfamily.mx/" target="_blank" alt="Digital Family" title="Digital Family").digitalfamilylogo: img(src="app/digitalfamily.png", alt="Digital Family")
             
             .section(v-if="screen==2"): .container: .columns.is-vcentered
                 .column: Sprites(:s="['tablet1', 'tablet2']" :speed="2000" anim="animate__animated animate__bounceIn" exitanim="animate__animated animate__bounceOut" path="app/i/c5/cudi5-" ext=".svg" autoplay)
@@ -106,7 +107,7 @@ html(lang="es")
                         .columns.has-text-centered.endtext(v-if="au4")
                             p Recurso inspirado en "La web que queremos" creado por #[a(href="http://www.eun.org/" target="_blank") European Schoolnet], en colaboración con la red Insafe, con el respaldo de Liberty Global y Google bajo licencia CC BY-NC-ND 3.0
                 .column: Sprites(:s="['manoIzquierda', 'manoIzquierda2']" :speed="4000" anim="animate__animated animate__bounceIn" exitanim="animate__animated animate__bounceOut" path="app/i/c5/cudi5-" ext=".svg" autoplay)
-
+            a(v-if="screen>1" href="https://digitalfamily.mx/" target="_blank" alt="Digital Family" title="Digital Family").digitalfamilylogo: img(src="app/digitalfamily.png", alt="Digital Family")
 
         script(src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js")
         script(src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.12/lib/draggable.bundle.js")

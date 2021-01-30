@@ -126,7 +126,7 @@ html,
 }
 @media (max-width: 768px) {
   .sprites {
-    max-width: 300px;
+    max-width: 160px;
   }
   .centralsprite {
     position: absolute;
@@ -244,5 +244,26 @@ html,
 .button.endbutton .button-content {
   font-size: 1rem;
   text-shadow: none;
+}
+.digitalfamilylogo {
+  display: block;
+  margin: auto auto 10px auto;
+  max-width: 140px;
+}
+.digitalfamilylogo img {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .digitalfamilylogo {
+    margin: auto auto 10px auto;
+    max-width: 100px;
+  }
+}
+.start .digitalfamilylogo {
+  margin-top: 200px;
+  max-width: 140px;
+}
+.section {
+  padding: 1rem !important;
 }
 /*# sourceMappingURL=app.css.map */
